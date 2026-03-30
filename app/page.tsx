@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div style={{ textAlign: "center", marginTop: "50px", fontFamily: "sans-serif" }}>
       
       <h1>مأذون شرعي بالمدينة المنورة</h1>
 
@@ -14,7 +14,8 @@ export default function Home() {
           border: "none",
           borderRadius: "10px",
           width: "80%",
-          marginBottom: "10px"
+          marginBottom: "10px",
+          fontSize: "18px"
         }}>
           تواصل واتساب
         </button>
@@ -29,7 +30,8 @@ export default function Home() {
           padding: "15px",
           border: "none",
           borderRadius: "10px",
-          width: "80%"
+          width: "80%",
+          fontSize: "18px"
         }}>
           اتصال
         </button>
