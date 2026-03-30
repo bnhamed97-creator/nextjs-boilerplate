@@ -1,4 +1,16 @@
 export const metadata = {
-  title: "مأذون شرعي بالمدينة المنورة | توثيق زواج رسمي",
-  description: "مأذون شرعي مرخص في المدينة المنورة لتوثيق عقود الزواج بسرعة وسهولة. تواصل واتساب الآن.",
+  title: "مأذون شرعي بالمدينة المنورة",
+  description: "توثيق عقود الزواج - سرعة وإنجاز",
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="ar">
+      <body>{children}</body>
+    </html>
+  );
+}
