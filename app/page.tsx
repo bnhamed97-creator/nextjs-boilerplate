@@ -146,4 +146,28 @@ export default function Home() {
 
           <div className="section-title">الخدمات</div>
 
-          <div className="service-item"><span class
+          <div className="service-item"><span className="service-number">١-</span>رفع طلبات اونلاين</div>
+          <div className="service-item"><span className="service-number">٢-</span>توثيق عقود</div>
+          <div className="service-item"><span className="service-number">٣-</span>الاستشارات</div>
+
+          <hr />
+
+          <div className="speed-text">سرعة و إنجاز</div>
+
+          <div className="phone-display">📞 +966 55 465 9799</div>
+
+          <a className="btn whatsapp" href="https://wa.me/966554659799" target="_blank">
+            تواصل واتساب
+          </a>
+
+          <a className="btn call" href="tel:0554659799">
+            اتصال
+          </a>
+
+          <div className="bottom-ornament">✦ ✦ ✦</div>
+
+        </div>
+      </div>
+    </>
+  );
+}
