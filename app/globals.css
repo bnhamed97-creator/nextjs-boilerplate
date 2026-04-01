@@ -5,3 +5,13 @@ body {
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
