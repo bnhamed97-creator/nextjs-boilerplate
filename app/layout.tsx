@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "مأذون شرعي بالمدينة المنورة",
+  title: "ماذون شرعي بالمدينة المنورة",
   description: "توثيق عقود الزواج بسرعة وإنجاز",
   icons: {
     icon: "/logo.png",
