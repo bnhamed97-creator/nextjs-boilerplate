@@ -142,12 +142,12 @@ export default function Home() {
           {/* 🔥 الشعار */}
           <img src="/logo.png" alt="شعار" className="logo" />
 
-          <div className="main-title">مأذون شرعي</div>
+          <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
 
           <hr />
 
-          <p className="subtitle-text">مأذون شرعي مرخص من وزارة العدل</p>
+          <p className="subtitle-text">ماذون شرعي مرخص من وزارة العدل</p>
           <p className="subtitle-text">
             لتوثيق عقود الأنكحة للمواطنين والمقيمين
           </p>
