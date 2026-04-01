@@ -31,26 +31,13 @@ export default function Home() {
           text-align: center;
         }
 
-        /* 🔥 الشعار الجديد */
-        .logo-container {
-          margin-bottom: 1rem;
-        }
-
+        /* 🔥 الشعار */
         .logo {
-          width: 85px;
-          height: auto;
+          width: 90px;
+          height: 90px;
           object-fit: contain;
-
-          mix-blend-mode: multiply;
-
-          filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5))
-                  drop-shadow(0 0 10px rgba(201,162,39,0.4));
-
-          transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-          transform: scale(1.05);
+          margin-bottom: 1rem;
+          filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
         }
 
         .main-title {
@@ -137,6 +124,12 @@ export default function Home() {
           color: white;
         }
 
+        /* 🔥 زر الخريطة */
+        .map {
+          background: linear-gradient(135deg, #1e90ff, #0066cc);
+          color: white;
+        }
+
         .bottom-ornament {
           color: #c9a227;
           font-size: 1.3rem;
@@ -146,17 +139,15 @@ export default function Home() {
       <div className="wrapper">
         <div className="content-card">
 
-          {/* 🔥 الشعار بدل الهلال */}
-          <div className="logo-container">
-            <img src="/logo.png" alt="شعار وزارة العدل" className="logo" />
-          </div>
+          {/* 🔥 الشعار */}
+          <img src="/logo.png" alt="شعار" className="logo" />
 
-          <div className="main-title">ماذون شرعي</div>
+          <div className="main-title">مأذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
 
           <hr />
 
-          <p className="subtitle-text">ماذون شرعي بالمدينة مرخص "وزارة العدل"</p>
+          <p className="subtitle-text">مأذون شرعي مرخص من وزارة العدل</p>
           <p className="subtitle-text">
             لتوثيق عقود الأنكحة للمواطنين والمقيمين
           </p>
@@ -181,6 +172,15 @@ export default function Home() {
 
           <a className="btn call" href="tel:0554659799">
             اتصال
+          </a>
+
+          {/* 🔥 زر الخريطة */}
+          <a 
+            className="btn map"
+            href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8" 
+            target="_blank"
+          >
+            موقعنا على الخريطة
           </a>
 
           <div className="bottom-ornament">✦ ✦ ✦</div>
