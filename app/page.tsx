@@ -130,7 +130,8 @@ export default function Home() {
       <div className="wrapper">
         <div className="content-card">
 
-          <div className="arch-ornament">☽ ✦ ☾</div>
+          {/* 🔥 هذا هو التعديل الوحيد */}
+          <img src="/logo.png" alt="وزارة العدل" style={{ width: "90px", marginBottom: "10px" }} />
 
           <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
