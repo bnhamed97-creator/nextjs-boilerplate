@@ -164,8 +164,7 @@ export default function Home() {
 
           <div className="speed-text">سرعة و إنجاز</div>
 
-          <div className="phone-display">📞 +966 55 465 9799</div>
-
+         
           <a className="btn whatsapp" href="https://wa.me/966554659799" target="_blank">
             تواصل واتساب
           </a>
