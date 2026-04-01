@@ -31,10 +31,26 @@ export default function Home() {
           text-align: center;
         }
 
-        .arch-ornament {
-          color: #c9a227;
-          font-size: 2.2rem;
+        /* 🔥 الشعار الجديد */
+        .logo-container {
           margin-bottom: 1rem;
+        }
+
+        .logo {
+          width: 85px;
+          height: auto;
+          object-fit: contain;
+
+          mix-blend-mode: multiply;
+
+          filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5))
+                  drop-shadow(0 0 10px rgba(201,162,39,0.4));
+
+          transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+          transform: scale(1.05);
         }
 
         .main-title {
@@ -130,8 +146,10 @@ export default function Home() {
       <div className="wrapper">
         <div className="content-card">
 
-          {/* 🔥 هذا هو التعديل الوحيد */}
-          <img src="/logo.png" alt="وزارة العدل" style={{ width: "90px", marginBottom: "10px" }} />
+          {/* 🔥 الشعار بدل الهلال */}
+          <div className="logo-container">
+            <img src="/logo.png" alt="شعار وزارة العدل" className="logo" />
+          </div>
 
           <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
