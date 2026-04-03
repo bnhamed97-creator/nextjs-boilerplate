@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Head from "next/head"; // ✅ إضافة SEO
+import Head from "next/head";
 
 export default function Home() {
 
@@ -27,16 +27,19 @@ export default function Home() {
 
   return (
     <>
-      {/* 🔥 SEO فقط بدون تخريب */}
+      {/* ✅ SEO + تحسين الخط */}
       <Head>
         <title>مأذون شرعي في المدينة المنورة | توثيق زواج سريع</title>
-        <meta name="description" content="مأذون شرعي مرخص في المدينة المنورة لتوثيق عقود الزواج للمواطنين والمقيمين بسرعة وسهولة في جميع الأحياء." />
-        <meta name="keywords" content="مأذون شرعي المدينة, مأذون زواج المدينة المنورة, توثيق زواج المدينة, عقد نكاح المدينة" />
+        <meta name="description" content="مأذون شرعي مرخص في المدينة المنورة لتوثيق عقود الزواج بسرعة وسهولة في جميع الأحياء." />
+        <meta name="keywords" content="مأذون شرعي المدينة, مأذون زواج المدينة, عقد نكاح المدينة" />
+
+        {/* 🔥 تحسين الخط */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -180,7 +183,8 @@ export default function Home() {
 
         <div className="content-card">
 
-          <img src="/logo.png" alt="شعار" className="logo" />
+          {/* 🔥 تحسين الصورة */}
+          <img src="/logo.png" alt="شعار" className="logo" width="90" height="90" />
 
           <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
