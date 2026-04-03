@@ -1,29 +1,9 @@
-"use client";
-import { useEffect, useState } from "react";
+export const metadata = {
+  title: "مأذون شرعي في المدينة المنورة | توثيق زواج سريع",
+  description: "مأذون شرعي مرخص في المدينة المنورة لتوثيق عقود الزواج للمواطنين والمقيمين بسرعة وسهولة في جميع الأحياء."
+};
 
 export default function Home() {
-
-  const reviews = [
-    { name: "nouf Ha", text: "ممتاز جدًا 👍 مأذون محترم وملتزم وتعامل واضح وسهل في الإجراءات" },
-    { name: "احمد الجابري", text: "الله يوفقه، محترم وأخلاقه طيبة" },
-    { name: "Nonoh Alhrb", text: "ما شاء الله على أخلاقه" },
-    { name: "عميل", text: "قمة في الأخلاق والتعامل ربي يوفقه 👍👍" },
-    { name: "Rov 70", text: "ما شاء الله رجل محترم" },
-    { name: "G A", text: "👍" },
-    { name: "Naif", text: "تم التعامل معه وجزاه الله خير" }
-  ];
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % reviews.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const current = reviews[index];
-
   return (
     <>
       <style>{`
@@ -39,7 +19,6 @@ export default function Home() {
         .wrapper {
           min-height: 100vh;
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
           background-color: #0a3214;
@@ -62,12 +41,15 @@ export default function Home() {
           height: 90px;
           object-fit: contain;
           margin-bottom: 1rem;
+          filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
         }
 
         .main-title {
           color: #f0c040;
           font-size: 1.8rem;
           font-weight: 700;
+          margin-bottom: 0.3rem;
+          text-shadow: 0 0 10px rgba(200,160,30,0.5);
         }
 
         .sub-title {
@@ -86,6 +68,7 @@ export default function Home() {
           color: #f5f0e8;
           font-size: 0.95rem;
           margin-bottom: 0.5rem;
+          line-height: 1.6;
         }
 
         .section-title {
@@ -93,12 +76,19 @@ export default function Home() {
           font-size: 1.25rem;
           font-weight: 700;
           margin: 0.75rem 0;
+          text-shadow: 0 0 8px rgba(200,160,30,0.5);
         }
 
         .service-item {
           color: #f5f0e8;
           font-size: 1rem;
           padding: 0.35rem 0;
+          display: block;
+          text-decoration: none;
+        }
+
+        .service-item:hover {
+          color: #f0c040;
         }
 
         .service-number {
@@ -111,6 +101,7 @@ export default function Home() {
           color: #f0c040;
           font-size: 1.4rem;
           font-weight: 700;
+          text-shadow: 0 0 10px rgba(200,160,30,0.6);
           margin: 0.5rem 0;
         }
 
@@ -125,54 +116,28 @@ export default function Home() {
           margin-bottom: 10px;
         }
 
-        .whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: white; }
-        .call { background: linear-gradient(135deg, #c0392b, #922b21); color: white; }
-        .map { background: linear-gradient(135deg, #1e90ff, #0066cc); color: white; }
+        .whatsapp {
+          background: linear-gradient(135deg, #25d366, #128c7e);
+          color: white;
+        }
+
+        .call {
+          background: linear-gradient(135deg, #c0392b, #922b21);
+          color: white;
+        }
+
+        .map {
+          background: linear-gradient(135deg, #1e90ff, #0066cc);
+          color: white;
+        }
 
         .bottom-ornament {
           color: #c9a227;
           font-size: 1.3rem;
         }
-
-        /* ⭐ التقييم */
-        .rating-box {
-          max-width: 360px;
-          width: 100%;
-          border: 1px solid #c9a227;
-          border-radius: 10px;
-          padding: 10px;
-          margin: 10px;
-          text-align: center;
-          color: white;
-        }
-
-        .stars { color: #f0c040; }
-
-        /* 💬 السلايدر */
-        .slider {
-          max-width: 360px;
-          width: 100%;
-          margin: 10px;
-        }
-
-        .review-card {
-          background: rgba(10, 50, 20, 0.85);
-          border: 1px solid #c9a227;
-          border-radius: 10px;
-          padding: 15px;
-          text-align: center;
-          color: white;
-        }
-
-        .review-name {
-          color: #c9a227;
-          margin-top: 5px;
-        }
       `}</style>
 
       <div className="wrapper">
-
-        {/* ✅ كرتك الأصلي بدون تغيير */}
         <div className="content-card">
 
           <img src="/logo.png" alt="شعار" className="logo" />
@@ -197,31 +162,49 @@ export default function Home() {
 
           <hr />
 
+          {/* 🔥 SEO نص */}
+          <p className="subtitle-text">
+            مأذون شرعي في المدينة المنورة يقدم خدمات توثيق عقود الزواج بسرعة واحترافية في جميع أحياء المدينة المنورة مثل العوالي، العزيزية، قباء، شوران، وقربان.
+          </p>
+
+          <p className="subtitle-text">
+            نخدم المواطنين والمقيمين مع إمكانية الحضور للموقع أو إنجاز المعاملة إلكترونياً بكل سهولة.
+          </p>
+
+          <hr />
+
+          {/* 🔥 روابط الأحياء */}
+          <div className="section-title">نخدم جميع الأحياء</div>
+
+          <a href="/madinah-awali" className="service-item">حي العوالي</a>
+          <a href="/madinah-aziziyah" className="service-item">حي العزيزية</a>
+          <a href="/madinah-quba" className="service-item">حي قباء</a>
+          <a href="/madinah-shuran" className="service-item">حي شوران</a>
+          <a href="/madinah-qurban" className="service-item">حي قربان</a>
+
+          <hr />
+
           <div className="speed-text">سرعة و إنجاز</div>
 
-          <a className="btn whatsapp" href="https://wa.me/966554659799">تواصل واتساب</a>
-          <a className="btn call" href="tel:0554659799">اتصال</a>
-          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">موقعنا على الخريطة</a>
+          <a className="btn whatsapp" href="https://wa.me/966554659799" target="_blank">
+            تواصل واتساب
+          </a>
+
+          <a className="btn call" href="tel:0554659799">
+            اتصال
+          </a>
+
+          <a 
+            className="btn map"
+            href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8" 
+            target="_blank"
+          >
+            موقعنا على الخريطة
+          </a>
 
           <div className="bottom-ornament">✦ ✦ ✦</div>
 
         </div>
-
-        {/* ⭐ التقييم تحت */}
-        <div className="rating-box">
-          <div className="stars">★★★★★</div>
-          <div>5.0 من 5 - تقييم العملاء عبر Google</div>
-        </div>
-
-        {/* 💬 التعليقات سلايدر */}
-        <div className="slider">
-          <div className="review-card">
-            <div>⭐️⭐️⭐️⭐️⭐️</div>
-            <p>{current.text}</p>
-            <div className="review-name">- {current.name}</div>
-          </div>
-        </div>
-
       </div>
     </>
   );
