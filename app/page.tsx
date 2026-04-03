@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Head from "next/head"; // ✅ إضافة SEO
 
 export default function Home() {
 
@@ -26,6 +27,13 @@ export default function Home() {
 
   return (
     <>
+      {/* 🔥 SEO فقط بدون تخريب */}
+      <Head>
+        <title>مأذون شرعي في المدينة المنورة | توثيق زواج سريع</title>
+        <meta name="description" content="مأذون شرعي مرخص في المدينة المنورة لتوثيق عقود الزواج للمواطنين والمقيمين بسرعة وسهولة في جميع الأحياء." />
+        <meta name="keywords" content="مأذون شرعي المدينة, مأذون زواج المدينة المنورة, توثيق زواج المدينة, عقد نكاح المدينة" />
+      </Head>
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 
@@ -134,7 +142,6 @@ export default function Home() {
           font-size: 1.3rem;
         }
 
-        /* ⭐ التقييم */
         .rating-box {
           max-width: 360px;
           width: 100%;
@@ -148,7 +155,6 @@ export default function Home() {
 
         .stars { color: #f0c040; }
 
-        /* 💬 السلايدر */
         .slider {
           max-width: 360px;
           width: 100%;
@@ -172,7 +178,6 @@ export default function Home() {
 
       <div className="wrapper">
 
-        {/* ✅ كرتك الأصلي بدون تغيير */}
         <div className="content-card">
 
           <img src="/logo.png" alt="شعار" className="logo" />
@@ -207,13 +212,11 @@ export default function Home() {
 
         </div>
 
-        {/* ⭐ التقييم تحت */}
         <div className="rating-box">
           <div className="stars">★★★★★</div>
           <div>5.0 من 5 - تقييم العملاء عبر Google</div>
         </div>
 
-        {/* 💬 التعليقات سلايدر */}
         <div className="slider">
           <div className="review-card">
             <div>⭐️⭐️⭐️⭐️⭐️</div>
