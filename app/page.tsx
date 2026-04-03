@@ -14,6 +14,7 @@ export default function Home() {
         .wrapper {
           min-height: 100vh;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
           background-color: #0a3214;
@@ -31,7 +32,6 @@ export default function Home() {
           text-align: center;
         }
 
-        /* 🔥 الشعار */
         .logo {
           width: 90px;
           height: 90px;
@@ -72,7 +72,6 @@ export default function Home() {
           font-size: 1.25rem;
           font-weight: 700;
           margin: 0.75rem 0;
-          text-shadow: 0 0 8px rgba(200,160,30,0.5);
         }
 
         .service-item {
@@ -91,16 +90,7 @@ export default function Home() {
           color: #f0c040;
           font-size: 1.4rem;
           font-weight: 700;
-          text-shadow: 0 0 10px rgba(200,160,30,0.6);
           margin: 0.5rem 0;
-        }
-
-        .phone-display {
-          color: #f0c040;
-          font-size: 1.1rem;
-          font-weight: 700;
-          direction: ltr;
-          margin-bottom: 1rem;
         }
 
         .btn {
@@ -124,7 +114,6 @@ export default function Home() {
           color: white;
         }
 
-        /* 🔥 زر الخريطة */
         .map {
           background: linear-gradient(135deg, #1e90ff, #0066cc);
           color: white;
@@ -134,12 +123,44 @@ export default function Home() {
           color: #c9a227;
           font-size: 1.3rem;
         }
+
+        /* 🔥 التقييمات */
+        .reviews {
+          max-width: 360px;
+          width: 100%;
+          margin: 1rem;
+        }
+
+        .review-card {
+          background: rgba(10, 50, 20, 0.85);
+          border: 1px solid #c9a227;
+          border-radius: 10px;
+          padding: 1rem;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+
+        .stars {
+          color: #f0c040;
+          margin-bottom: 5px;
+        }
+
+        .review-text {
+          color: #f5f0e8;
+          font-size: 0.9rem;
+          margin-bottom: 5px;
+        }
+
+        .review-name {
+          color: #c9a227;
+          font-size: 0.85rem;
+        }
       `}</style>
 
       <div className="wrapper">
+        
         <div className="content-card">
 
-          {/* 🔥 الشعار */}
           <img src="/logo.png" alt="شعار" className="logo" />
 
           <div className="main-title">ماذون شرعي</div>
@@ -164,7 +185,6 @@ export default function Home() {
 
           <div className="speed-text">سرعة و إنجاز</div>
 
-         
           <a className="btn whatsapp" href="https://wa.me/966554659799" target="_blank">
             تواصل واتساب
           </a>
@@ -173,18 +193,37 @@ export default function Home() {
             اتصال
           </a>
 
-          {/* 🔥 زر الخريطة */}
-          <a 
-            className="btn map"
-            href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8" 
-            target="_blank"
-          >
+          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8" target="_blank">
             موقعنا على الخريطة
           </a>
 
           <div className="bottom-ornament">✦ ✦ ✦</div>
 
         </div>
+
+        {/* 🔥 التقييمات تحت الكرت */}
+        <div className="reviews">
+
+          <div className="review-card">
+            <div className="stars">★★★★★</div>
+            <div className="review-text">ممتاز جدًا 👍 مأذون محترم وملتزم وسريع في الإنجاز</div>
+            <div className="review-name">- nouf Ha</div>
+          </div>
+
+          <div className="review-card">
+            <div className="stars">★★★★★</div>
+            <div className="review-text">الله يوفقه، محترم وأخلاقه طيبة</div>
+            <div className="review-name">- احمد الجابري</div>
+          </div>
+
+          <div className="review-card">
+            <div className="stars">★★★★★</div>
+            <div className="review-text">ما شاء الله قمة في الأخلاق والتعامل</div>
+            <div className="review-name">- Nonoh Alhrb</div>
+          </div>
+
+        </div>
+
       </div>
     </>
   );
