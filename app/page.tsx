@@ -14,7 +14,6 @@ export default function Home() {
         .wrapper {
           min-height: 100vh;
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
           background-color: #0a3214;
@@ -37,15 +36,32 @@ export default function Home() {
           height: 90px;
           object-fit: contain;
           margin-bottom: 1rem;
-          filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
+        }
+
+        /* 🔥 التقييم العلوي */
+        .rating-box {
+          background: rgba(0,0,0,0.25);
+          border: 1px solid #c9a227;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom: 12px;
+        }
+
+        .stars {
+          color: #f0c040;
+          font-size: 1.2rem;
+        }
+
+        .rating-text {
+          color: #f5f0e8;
+          font-size: 0.9rem;
+          margin-top: 3px;
         }
 
         .main-title {
           color: #f0c040;
           font-size: 1.8rem;
           font-weight: 700;
-          margin-bottom: 0.3rem;
-          text-shadow: 0 0 10px rgba(200,160,30,0.5);
         }
 
         .sub-title {
@@ -64,7 +80,6 @@ export default function Home() {
           color: #f5f0e8;
           font-size: 0.95rem;
           margin-bottom: 0.5rem;
-          line-height: 1.6;
         }
 
         .section-title {
@@ -77,20 +92,17 @@ export default function Home() {
         .service-item {
           color: #f5f0e8;
           font-size: 1rem;
-          padding: 0.35rem 0;
         }
 
         .service-number {
           color: #f0c040;
           font-weight: 700;
-          margin-left: 5px;
         }
 
         .speed-text {
           color: #f0c040;
           font-size: 1.4rem;
           font-weight: 700;
-          margin: 0.5rem 0;
         }
 
         .btn {
@@ -123,45 +135,20 @@ export default function Home() {
           color: #c9a227;
           font-size: 1.3rem;
         }
-
-        /* 🔥 التقييمات */
-        .reviews {
-          max-width: 360px;
-          width: 100%;
-          margin: 1rem;
-        }
-
-        .review-card {
-          background: rgba(10, 50, 20, 0.85);
-          border: 1px solid #c9a227;
-          border-radius: 10px;
-          padding: 1rem;
-          margin-bottom: 10px;
-          text-align: center;
-        }
-
-        .stars {
-          color: #f0c040;
-          margin-bottom: 5px;
-        }
-
-        .review-text {
-          color: #f5f0e8;
-          font-size: 0.9rem;
-          margin-bottom: 5px;
-        }
-
-        .review-name {
-          color: #c9a227;
-          font-size: 0.85rem;
-        }
       `}</style>
 
       <div className="wrapper">
-        
         <div className="content-card">
 
           <img src="/logo.png" alt="شعار" className="logo" />
+
+          {/* 🔥 التقييم الاحترافي */}
+          <div className="rating-box">
+            <div className="stars">★★★★★</div>
+            <div className="rating-text">
+              5.0 من 5 - تقييم العملاء عبر Google
+            </div>
+          </div>
 
           <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
@@ -177,9 +164,9 @@ export default function Home() {
 
           <div className="section-title">الخدمات</div>
 
-          <div className="service-item"><span className="service-number">١-</span>رفع طلبات اونلاين</div>
-          <div className="service-item"><span className="service-number">٢-</span>توثيق عقود</div>
-          <div className="service-item"><span className="service-number">٣-</span>الاستشارات</div>
+          <div className="service-item"><span className="service-number">١-</span> رفع طلبات اونلاين</div>
+          <div className="service-item"><span className="service-number">٢-</span> توثيق عقود</div>
+          <div className="service-item"><span className="service-number">٣-</span> الاستشارات</div>
 
           <hr />
 
@@ -200,30 +187,6 @@ export default function Home() {
           <div className="bottom-ornament">✦ ✦ ✦</div>
 
         </div>
-
-        {/* 🔥 التقييمات تحت الكرت */}
-        <div className="reviews">
-
-          <div className="review-card">
-            <div className="stars">★★★★★</div>
-            <div className="review-text">ممتاز جدًا 👍 مأذون محترم وملتزم وسريع في الإنجاز</div>
-            <div className="review-name">- nouf Ha</div>
-          </div>
-
-          <div className="review-card">
-            <div className="stars">★★★★★</div>
-            <div className="review-text">الله يوفقه، محترم وأخلاقه طيبة</div>
-            <div className="review-name">- احمد الجابري</div>
-          </div>
-
-          <div className="review-card">
-            <div className="stars">★★★★★</div>
-            <div className="review-text">ما شاء الله قمة في الأخلاق والتعامل</div>
-            <div className="review-name">- Nonoh Alhrb</div>
-          </div>
-
-        </div>
-
       </div>
     </>
   );
