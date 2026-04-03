@@ -14,6 +14,7 @@ export default function Home() {
         .wrapper {
           min-height: 100vh;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
           background-color: #0a3214;
@@ -36,26 +37,6 @@ export default function Home() {
           height: 90px;
           object-fit: contain;
           margin-bottom: 1rem;
-        }
-
-        /* 🔥 التقييم العلوي */
-        .rating-box {
-          background: rgba(0,0,0,0.25);
-          border: 1px solid #c9a227;
-          border-radius: 10px;
-          padding: 10px;
-          margin-bottom: 12px;
-        }
-
-        .stars {
-          color: #f0c040;
-          font-size: 1.2rem;
-        }
-
-        .rating-text {
-          color: #f5f0e8;
-          font-size: 0.9rem;
-          margin-top: 3px;
         }
 
         .main-title {
@@ -135,20 +116,60 @@ export default function Home() {
           color: #c9a227;
           font-size: 1.3rem;
         }
+
+        /* ⭐ التقييم */
+        .rating-box {
+          max-width: 360px;
+          width: 100%;
+          background: rgba(0,0,0,0.25);
+          border: 1px solid #c9a227;
+          border-radius: 10px;
+          padding: 10px;
+          margin: 10px;
+          text-align: center;
+        }
+
+        .stars {
+          color: #f0c040;
+        }
+
+        .rating-text {
+          color: #f5f0e8;
+          font-size: 0.9rem;
+        }
+
+        /* 💬 التعليقات */
+        .reviews {
+          max-width: 360px;
+          width: 100%;
+        }
+
+        .review-card {
+          background: rgba(10, 50, 20, 0.85);
+          border: 1px solid #c9a227;
+          border-radius: 10px;
+          padding: 1rem;
+          margin: 10px;
+          text-align: center;
+        }
+
+        .review-text {
+          color: #f5f0e8;
+          font-size: 0.9rem;
+        }
+
+        .review-name {
+          color: #c9a227;
+          font-size: 0.85rem;
+          margin-top: 5px;
+        }
       `}</style>
 
       <div className="wrapper">
+
         <div className="content-card">
 
           <img src="/logo.png" alt="شعار" className="logo" />
-
-          {/* 🔥 التقييم الاحترافي */}
-          <div className="rating-box">
-            <div className="stars">★★★★★</div>
-            <div className="rating-text">
-              5.0 من 5 - تقييم العملاء عبر Google
-            </div>
-          </div>
 
           <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
@@ -172,7 +193,7 @@ export default function Home() {
 
           <div className="speed-text">سرعة و إنجاز</div>
 
-          <a className="btn whatsapp" href="https://wa.me/966554659799" target="_blank">
+          <a className="btn whatsapp" href="https://wa.me/966554659799">
             تواصل واتساب
           </a>
 
@@ -180,13 +201,42 @@ export default function Home() {
             اتصال
           </a>
 
-          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8" target="_blank">
+          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">
             موقعنا على الخريطة
           </a>
 
           <div className="bottom-ornament">✦ ✦ ✦</div>
 
         </div>
+
+        {/* ⭐ التقييم تحت */}
+        <div className="rating-box">
+          <div className="stars">★★★★★</div>
+          <div className="rating-text">
+            5.0 من 5 - تقييم العملاء عبر Google
+          </div>
+        </div>
+
+        {/* 💬 التعليقات */}
+        <div className="reviews">
+
+          <div className="review-card">
+            <div className="review-text">ممتاز جدًا 👍 مأذون محترم وملتزم وسريع</div>
+            <div className="review-name">- nouf Ha</div>
+          </div>
+
+          <div className="review-card">
+            <div className="review-text">الله يوفقه، محترم وأخلاقه طيبة</div>
+            <div className="review-name">- احمد الجابري</div>
+          </div>
+
+          <div className="review-card">
+            <div className="review-text">ما شاء الله قمة في الأخلاق والتعامل</div>
+            <div className="review-name">- Nonoh Alhrb</div>
+          </div>
+
+        </div>
+
       </div>
     </>
   );
