@@ -17,23 +17,35 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % reviews.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    let interval;
+
+    const start = () => {
+      interval = setInterval(() => {
+        setIndex((prev) => (prev + 1) % reviews.length);
+      }, 4000); // ⬅️ خففنا الضغط
+    };
+
+    const stop = () => clearInterval(interval);
+
+    start();
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    return () => stop();
   }, []);
 
   const current = reviews[index];
 
   return (
     <>
-      {/* ✅ SEO + تحسين الخط */}
       <Head>
         <title>مأذون شرعي في المدينة المنورة | توثيق زواج سريع</title>
         <meta name="description" content="مأذون شرعي مرخص في المدينة المنورة لتوثيق عقود الزواج بسرعة وسهولة في جميع الأحياء." />
         <meta name="keywords" content="مأذون شرعي المدينة, مأذون زواج المدينة, عقد نكاح المدينة" />
 
-        {/* 🔥 تحسين الخط */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
@@ -171,6 +183,7 @@ export default function Home() {
           padding: 15px;
           text-align: center;
           color: white;
+          min-height: 120px;
         }
 
         .review-name {
@@ -183,8 +196,8 @@ export default function Home() {
 
         <div className="content-card">
 
-          {/* 🔥 تحسين الصورة */}
-          <img src="/logo.png" alt="شعار" className="logo" width="90" height="90" />
+          {/* 🔥 صورة محسنة */}
+          <img src="/logo.webp" alt="شعار" className="logo" width="90" height="90" loading="eager" />
 
           <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
