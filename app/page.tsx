@@ -1,4 +1,29 @@
+"use client";
+import { useEffect, useState } from "react";
+
 export default function Home() {
+
+  const reviews = [
+    { name: "nouf Ha", text: "ممتاز جدًا 👍 مأذون محترم وملتزم وتعامل واضح وسهل في الإجراءات" },
+    { name: "احمد الجابري", text: "الله يوفقه، محترم وأخلاقه طيبة" },
+    { name: "Nonoh Alhrb", text: "ما شاء الله على أخلاقه" },
+    { name: "عميل", text: "قمة في الأخلاق والتعامل ربي يوفقه 👍👍" },
+    { name: "Rov 70", text: "ما شاء الله رجل محترم" },
+    { name: "G A", text: "👍" },
+    { name: "Naif", text: "تم التعامل معه وجزاه الله خير" }
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % reviews.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const current = reviews[index];
+
   return (
     <>
       <style>{`
@@ -73,12 +98,20 @@ export default function Home() {
         .service-item {
           color: #f5f0e8;
           font-size: 1rem;
+          padding: 0.35rem 0;
+        }
+
+        .service-number {
+          color: #f0c040;
+          font-weight: 700;
+          margin-left: 5px;
         }
 
         .speed-text {
           color: #f0c040;
           font-size: 1.4rem;
           font-weight: 700;
+          margin: 0.5rem 0;
         }
 
         .btn {
@@ -92,9 +125,9 @@ export default function Home() {
           margin-bottom: 10px;
         }
 
-        .whatsapp { background: #25d366; color: white; }
-        .call { background: #c0392b; color: white; }
-        .map { background: #1e90ff; color: white; }
+        .whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: white; }
+        .call { background: linear-gradient(135deg, #c0392b, #922b21); color: white; }
+        .map { background: linear-gradient(135deg, #1e90ff, #0066cc); color: white; }
 
         .bottom-ornament {
           color: #c9a227;
@@ -115,37 +148,20 @@ export default function Home() {
 
         .stars { color: #f0c040; }
 
-        /* 💬 سلايدر CSS فقط */
+        /* 💬 السلايدر */
         .slider {
           max-width: 360px;
-          overflow: hidden;
-          height: 120px;
+          width: 100%;
+          margin: 10px;
         }
 
-        .slides {
-          display: flex;
-          flex-direction: column;
-          animation: slide 12s infinite;
-        }
-
-        @keyframes slide {
-          0% { transform: translateY(0); }
-          25% { transform: translateY(-120px); }
-          50% { transform: translateY(-240px); }
-          75% { transform: translateY(-360px); }
-          100% { transform: translateY(0); }
-        }
-
-        .review {
-          height: 120px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          color: white;
+        .review-card {
+          background: rgba(10, 50, 20, 0.85);
           border: 1px solid #c9a227;
-          margin: 5px;
           border-radius: 10px;
+          padding: 15px;
+          text-align: center;
+          color: white;
         }
 
         .review-name {
@@ -156,9 +172,10 @@ export default function Home() {
 
       <div className="wrapper">
 
+        {/* ✅ كرتك الأصلي بدون تغيير */}
         <div className="content-card">
 
-          <img src="/logo.png" className="logo" />
+          <img src="/logo.png" alt="شعار" className="logo" />
 
           <div className="main-title">ماذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
@@ -174,48 +191,34 @@ export default function Home() {
 
           <div className="section-title">الخدمات</div>
 
-          <div className="service-item">توثيق عقود</div>
+          <div className="service-item"><span className="service-number">١-</span>رفع طلبات اونلاين</div>
+          <div className="service-item"><span className="service-number">٢-</span>توثيق عقود</div>
+          <div className="service-item"><span className="service-number">٣-</span>الاستشارات</div>
 
           <hr />
 
           <div className="speed-text">سرعة و إنجاز</div>
 
-          <a className="btn whatsapp" href="https://wa.me/966554659799">واتساب</a>
+          <a className="btn whatsapp" href="https://wa.me/966554659799">تواصل واتساب</a>
           <a className="btn call" href="tel:0554659799">اتصال</a>
-          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">الخريطة</a>
+          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">موقعنا على الخريطة</a>
 
           <div className="bottom-ornament">✦ ✦ ✦</div>
 
         </div>
 
-        {/* ⭐ التقييم */}
+        {/* ⭐ التقييم تحت */}
         <div className="rating-box">
           <div className="stars">★★★★★</div>
-          <div>5.0 من 5 - تقييم العملاء</div>
+          <div>5.0 من 5 - تقييم العملاء عبر Google</div>
         </div>
 
-        {/* 💬 التعليقات (سلايدر) */}
+        {/* 💬 التعليقات سلايدر */}
         <div className="slider">
-          <div className="slides">
-
-            <div className="review">
-              <div>⭐️⭐️⭐️⭐️⭐️</div>
-              <p>ممتاز جدًا 👍 تعامل راقي وسريع</p>
-              <div className="review-name">- nouf Ha</div>
-            </div>
-
-            <div className="review">
-              <div>⭐️⭐️⭐️⭐️⭐️</div>
-              <p>محترم وأخلاقه طيبة</p>
-              <div className="review-name">- احمد الجابري</div>
-            </div>
-
-            <div className="review">
-              <div>⭐️⭐️⭐️⭐️⭐️</div>
-              <p>قمة في الأخلاق والتعامل</p>
-              <div className="review-name">- Nonoh</div>
-            </div>
-
+          <div className="review-card">
+            <div>⭐️⭐️⭐️⭐️⭐️</div>
+            <p>{current.text}</p>
+            <div className="review-name">- {current.name}</div>
           </div>
         </div>
 
