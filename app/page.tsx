@@ -1,32 +1,4 @@
-"use client";
-import { useEffect, useState } from "react";
-
-export const metadata = {
-  title: "مأذون شرعي في المدينة المنورة | توثيق زواج سريع",
-  description: "مأذون شرعي مرخص في المدينة المنورة لتوثيق عقود الزواج للمواطنين والمقيمين بسرعة وسهولة في جميع الأحياء."
-};
-
 export default function Home() {
-
-  const reviews = [
-    { name: "nouf Ha", text: "ممتاز جدًا 👍 مأذون محترم وملتزم وتعامل واضح وسهل في الإجراءات" },
-    { name: "احمد الجابري", text: "الله يوفقه، محترم وأخلاقه طيبة" },
-    { name: "Nonoh Alhrb", text: "ما شاء الله على أخلاقه" },
-    { name: "Rov 70", text: "ما شاء الله رجل محترم" },
-    { name: "Naif", text: "تم التعامل معه وجزاه الله خير" }
-  ];
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % reviews.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const current = reviews[index];
-
   return (
     <>
       <style>{`
@@ -89,7 +61,6 @@ export default function Home() {
           color: #f5f0e8;
           font-size: 0.95rem;
           margin-bottom: 0.5rem;
-          line-height: 1.6;
         }
 
         .section-title {
@@ -102,14 +73,6 @@ export default function Home() {
         .service-item {
           color: #f5f0e8;
           font-size: 1rem;
-          padding: 0.35rem 0;
-          display: block;
-          text-decoration: none;
-        }
-
-        .service-number {
-          color: #f0c040;
-          font-weight: 700;
         }
 
         .speed-text {
@@ -152,20 +115,37 @@ export default function Home() {
 
         .stars { color: #f0c040; }
 
-        /* 💬 السلايدر */
+        /* 💬 سلايدر CSS فقط */
         .slider {
           max-width: 360px;
-          width: 100%;
-          margin: 10px;
+          overflow: hidden;
+          height: 120px;
         }
 
-        .review-card {
-          background: rgba(10, 50, 20, 0.85);
-          border: 1px solid #c9a227;
-          border-radius: 10px;
-          padding: 15px;
-          text-align: center;
+        .slides {
+          display: flex;
+          flex-direction: column;
+          animation: slide 12s infinite;
+        }
+
+        @keyframes slide {
+          0% { transform: translateY(0); }
+          25% { transform: translateY(-120px); }
+          50% { transform: translateY(-240px); }
+          75% { transform: translateY(-360px); }
+          100% { transform: translateY(0); }
+        }
+
+        .review {
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           color: white;
+          border: 1px solid #c9a227;
+          margin: 5px;
+          border-radius: 10px;
         }
 
         .review-name {
@@ -194,22 +174,13 @@ export default function Home() {
 
           <div className="section-title">الخدمات</div>
 
-          <div className="service-item"><span className="service-number">١-</span>رفع طلبات اونلاين</div>
-          <div className="service-item"><span className="service-number">٢-</span>توثيق عقود</div>
-          <div className="service-item"><span className="service-number">٣-</span>الاستشارات</div>
-
-          <hr />
-
-          {/* 🔥 SEO */}
-          <p className="subtitle-text">
-            مأذون شرعي في المدينة المنورة يقدم خدمات توثيق عقود الزواج في جميع الأحياء مثل العوالي، العزيزية، قباء، شوران، وقربان.
-          </p>
+          <div className="service-item">توثيق عقود</div>
 
           <hr />
 
           <div className="speed-text">سرعة و إنجاز</div>
 
-          <a className="btn whatsapp" href="https://wa.me/966554659799">تواصل واتساب</a>
+          <a className="btn whatsapp" href="https://wa.me/966554659799">واتساب</a>
           <a className="btn call" href="tel:0554659799">اتصال</a>
           <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">الخريطة</a>
 
@@ -220,15 +191,31 @@ export default function Home() {
         {/* ⭐ التقييم */}
         <div className="rating-box">
           <div className="stars">★★★★★</div>
-          <div>5.0 من 5 - تقييم العملاء عبر Google</div>
+          <div>5.0 من 5 - تقييم العملاء</div>
         </div>
 
-        {/* 💬 التعليقات */}
+        {/* 💬 التعليقات (سلايدر) */}
         <div className="slider">
-          <div className="review-card">
-            <div>⭐️⭐️⭐️⭐️⭐️</div>
-            <p>{current.text}</p>
-            <div className="review-name">- {current.name}</div>
+          <div className="slides">
+
+            <div className="review">
+              <div>⭐️⭐️⭐️⭐️⭐️</div>
+              <p>ممتاز جدًا 👍 تعامل راقي وسريع</p>
+              <div className="review-name">- nouf Ha</div>
+            </div>
+
+            <div className="review">
+              <div>⭐️⭐️⭐️⭐️⭐️</div>
+              <p>محترم وأخلاقه طيبة</p>
+              <div className="review-name">- احمد الجابري</div>
+            </div>
+
+            <div className="review">
+              <div>⭐️⭐️⭐️⭐️⭐️</div>
+              <p>قمة في الأخلاق والتعامل</p>
+              <div className="review-name">- Nonoh</div>
+            </div>
+
           </div>
         </div>
 
