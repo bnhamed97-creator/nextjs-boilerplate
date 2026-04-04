@@ -1,5 +1,6 @@
 "use client";
 import Head from "next/head";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -27,11 +28,10 @@ export default function Home() {
 
   return (
     <>
-      {/* 🔥 SEO بدون تخريب */}
+      {/* 🔥 SEO */}
       <Head>
         <title>مأذون شرعي المدينة المنورة | توثيق عقود الزواج بسرعة</title>
-        <meta name="description" content="مأذون شرعي في المدينة المنورة لتوثيق عقود الزواج للمواطنين والمقيمين بسرعة وسهولة في جميع الأحياء مثل قباء، العوالي، العزيزية، شوران وقربان." />
-        <meta name="keywords" content="مأذون شرعي المدينة, مأذون زواج المدينة المنورة, توثيق زواج المدينة, عقد نكاح المدينة" />
+        <meta name="description" content="مأذون شرعي في المدينة المنورة لتوثيق عقود الزواج بسرعة وسهولة في جميع الأحياء." />
       </Head>
 
       <style>{`
@@ -50,7 +50,6 @@ export default function Home() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          background-color: #0a3214;
         }
 
         .content-card {
@@ -61,15 +60,8 @@ export default function Home() {
           max-width: 360px;
           width: 100%;
           margin: 1rem;
-          box-shadow: 0 0 40px rgba(0,0,0,0.6), inset 0 0 60px rgba(10,50,20,0.4);
+          box-shadow: 0 0 40px rgba(0,0,0,0.6);
           text-align: center;
-        }
-
-        .logo {
-          width: 90px;
-          height: 90px;
-          object-fit: contain;
-          margin-bottom: 1rem;
         }
 
         .main-title {
@@ -93,7 +85,6 @@ export default function Home() {
         .subtitle-text {
           color: #f5f0e8;
           font-size: 0.95rem;
-          margin-bottom: 0.5rem;
         }
 
         .section-title {
@@ -105,7 +96,6 @@ export default function Home() {
 
         .service-item {
           color: #f5f0e8;
-          font-size: 1rem;
           padding: 0.35rem 0;
         }
 
@@ -119,55 +109,33 @@ export default function Home() {
           color: #f0c040;
           font-size: 1.4rem;
           font-weight: 700;
-          margin: 0.5rem 0;
         }
 
         .btn {
           display: block;
           padding: 0.75rem;
           border-radius: 30px;
-          font-size: 1.1rem;
           font-weight: 700;
           text-decoration: none;
-          width: 100%;
           margin-bottom: 10px;
         }
 
-        .whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: white; }
-        .call { background: linear-gradient(135deg, #c0392b, #922b21); color: white; }
-        .map { background: linear-gradient(135deg, #1e90ff, #0066cc); color: white; }
+        .whatsapp { background: #25d366; color: white; }
+        .call { background: #c0392b; color: white; }
+        .map { background: #1e90ff; color: white; }
 
-        .bottom-ornament {
-          color: #c9a227;
-          font-size: 1.3rem;
-        }
-
-        .rating-box {
+        .rating-box, .slider {
           max-width: 360px;
           width: 100%;
-          border: 1px solid #c9a227;
-          border-radius: 10px;
-          padding: 10px;
           margin: 10px;
           text-align: center;
           color: white;
-        }
-
-        .stars { color: #f0c040; }
-
-        .slider {
-          max-width: 360px;
-          width: 100%;
-          margin: 10px;
         }
 
         .review-card {
-          background: rgba(10, 50, 20, 0.85);
           border: 1px solid #c9a227;
           border-radius: 10px;
           padding: 15px;
-          text-align: center;
-          color: white;
         }
 
         .review-name {
@@ -178,10 +146,17 @@ export default function Home() {
 
       <div className="wrapper">
 
-        {/* ✅ كرتك الأصلي */}
+        {/* ✅ الكرت */}
         <div className="content-card">
 
-          <img src="/logo.webp" alt="شعار" className="logo" />
+          {/* 🔥 صورة محسنة */}
+          <Image
+            src="/logo.webp"
+            alt="مأذون شرعي المدينة"
+            width={90}
+            height={90}
+            priority
+          />
 
           <div className="main-title">مأذون شرعي</div>
           <div className="sub-title">بالمدينة المنورة</div>
@@ -205,21 +180,19 @@ export default function Home() {
 
           <div className="speed-text">سرعة و إنجاز</div>
 
-          <a className="btn whatsapp" href="https://wa.me/966554659799">تواصل واتساب</a>
+          <a className="btn whatsapp" href="https://wa.me/966554659799">واتساب</a>
           <a className="btn call" href="tel:0554659799">اتصال</a>
-          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">موقعنا على الخريطة</a>
-
-          <div className="bottom-ornament">✦ ✦ ✦</div>
+          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">الموقع</a>
 
         </div>
 
-        {/* ⭐ التقييم */}
+        {/* ⭐ تقييم */}
         <div className="rating-box">
-          <div className="stars">★★★★★</div>
-          <div>5.0 من 5 - تقييم العملاء عبر Google</div>
+          ★★★★★
+          <div>5.0 من 5</div>
         </div>
 
-        {/* 💬 التعليقات */}
+        {/* 💬 سلايدر */}
         <div className="slider">
           <div className="review-card">
             <div>⭐️⭐️⭐️⭐️⭐️</div>
