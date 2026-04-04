@@ -28,7 +28,6 @@ export default function Home() {
 
   return (
     <>
-      {/* 🔥 SEO */}
       <Head>
         <title>مأذون شرعي المدينة المنورة | توثيق عقود الزواج بسرعة</title>
         <meta name="description" content="مأذون شرعي في المدينة المنورة لتوثيق عقود الزواج بسرعة وسهولة في جميع الأحياء." />
@@ -60,7 +59,7 @@ export default function Home() {
           max-width: 360px;
           width: 100%;
           margin: 1rem;
-          box-shadow: 0 0 40px rgba(0,0,0,0.6);
+          box-shadow: 0 0 40px rgba(0,0,0,0.6), inset 0 0 60px rgba(10,50,20,0.4);
           text-align: center;
         }
 
@@ -111,31 +110,72 @@ export default function Home() {
           font-weight: 700;
         }
 
+        /* 🔥 الأزرار المحسنة */
         .btn {
           display: block;
-          padding: 0.75rem;
+          padding: 0.85rem;
           border-radius: 30px;
+          font-size: 1.1rem;
           font-weight: 700;
           text-decoration: none;
-          margin-bottom: 10px;
+          width: 100%;
+          margin-bottom: 12px;
+          transition: all 0.25s ease;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
-        .whatsapp { background: #25d366; color: white; }
-        .call { background: #c0392b; color: white; }
-        .map { background: #1e90ff; color: white; }
+        .whatsapp {
+          background: linear-gradient(135deg, #25d366, #128c7e);
+          color: white;
+        }
 
-        .rating-box, .slider {
+        .call {
+          background: linear-gradient(135deg, #e74c3c, #922b21);
+          color: white;
+        }
+
+        .map {
+          background: linear-gradient(135deg, #1e90ff, #0047ab);
+          color: white;
+        }
+
+        .btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+        }
+
+        .btn:active {
+          transform: scale(0.97);
+        }
+
+        /* ⭐ التقييم */
+        .rating-box {
           max-width: 360px;
           width: 100%;
+          border: 1px solid #c9a227;
+          border-radius: 10px;
+          padding: 10px;
           margin: 10px;
           text-align: center;
           color: white;
         }
 
+        .stars { color: #f0c040; }
+
+        /* 💬 السلايدر */
+        .slider {
+          max-width: 360px;
+          width: 100%;
+          margin: 10px;
+        }
+
         .review-card {
+          background: rgba(10, 50, 20, 0.85);
           border: 1px solid #c9a227;
           border-radius: 10px;
           padding: 15px;
+          text-align: center;
+          color: white;
         }
 
         .review-name {
@@ -146,10 +186,8 @@ export default function Home() {
 
       <div className="wrapper">
 
-        {/* ✅ الكرت */}
         <div className="content-card">
 
-          {/* 🔥 صورة محسنة */}
           <Image
             src="/logo.webp"
             alt="مأذون شرعي المدينة"
@@ -180,19 +218,19 @@ export default function Home() {
 
           <div className="speed-text">سرعة و إنجاز</div>
 
-          <a className="btn whatsapp" href="https://wa.me/966554659799">واتساب</a>
+          <a className="btn whatsapp" href="https://wa.me/966554659799">تواصل واتساب</a>
           <a className="btn call" href="tel:0554659799">اتصال</a>
-          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">الموقع</a>
+          <a className="btn map" href="https://maps.app.goo.gl/RdM7ghaZNrSQvQLY8">موقعنا على الخريطة</a>
 
         </div>
 
-        {/* ⭐ تقييم */}
+        {/* ⭐ التقييم */}
         <div className="rating-box">
-          ★★★★★
-          <div>5.0 من 5</div>
+          <div className="stars">★★★★★</div>
+          <div>5.0 من 5 - تقييم العملاء عبر Google</div>
         </div>
 
-        {/* 💬 سلايدر */}
+        {/* 💬 التعليقات */}
         <div className="slider">
           <div className="review-card">
             <div>⭐️⭐️⭐️⭐️⭐️</div>
