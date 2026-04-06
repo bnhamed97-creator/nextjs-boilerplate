@@ -34,8 +34,6 @@ export default function Home() {
       </Head>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -110,7 +108,6 @@ export default function Home() {
           font-weight: 700;
         }
 
-        /* 🔥 الأزرار المحسنة */
         .btn {
           display: block;
           padding: 0.85rem;
@@ -148,7 +145,6 @@ export default function Home() {
           transform: scale(0.97);
         }
 
-        /* ⭐ التقييم */
         .rating-box {
           max-width: 360px;
           width: 100%;
@@ -162,7 +158,6 @@ export default function Home() {
 
         .stars { color: #f0c040; }
 
-        /* 💬 السلايدر */
         .slider {
           max-width: 360px;
           width: 100%;
@@ -224,13 +219,11 @@ export default function Home() {
 
         </div>
 
-        {/* ⭐ التقييم */}
         <div className="rating-box">
           <div className="stars">★★★★★</div>
           <div>5.0 من 5 - تقييم العملاء عبر Google</div>
         </div>
 
-        {/* 💬 التعليقات */}
         <div className="slider">
           <div className="review-card">
             <div>⭐️⭐️⭐️⭐️⭐️</div>
