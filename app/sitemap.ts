@@ -1,19 +1,19 @@
 export default function sitemap() {
   return [
     {
-      url: "https://mathoonshari.com",
+      url: "https://www.mathoonshari.com",
       lastModified: new Date(),
     },
     {
-      url: "https://mathoonshari.com/services",
+      url: "https://www.mathoonshari.com/services",
       lastModified: new Date(),
     },
     {
-      url: "https://mathoonshari.com/about",
+      url: "https://www.mathoonshari.com/about",
       lastModified: new Date(),
     },
     {
-      url: "https://mathoonshari.com/contact",
+      url: "https://www.mathoonshari.com/contact",
       lastModified: new Date(),
     },
   ];
